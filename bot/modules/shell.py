@@ -39,10 +39,10 @@ def shell(update: Update, context: CallbackContext):
     stderr = stderr.decode()
     stdout = stdout.decode()
     if stdout:
-        reply += f"*Stdout*\n{stdout}\n"
+        reply += f"*Stdout*\n`{stdout}`\n"
         LOGGER.info(f"Shell - {cmd} - {stdout}")
     if stderr:
-        reply += f"*Stderr*\n{stderr}\n"
+        reply += f"*Stderr*\n`{stderr}`\n"
         LOGGER.error(f"Shell - {cmd} - {stderr}")
     if len(reply) > 3000:
         with open('shell_output.txt', 'w') as file:
@@ -57,5 +57,5 @@ def shell(update: Update, context: CallbackContext):
         message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
-SHELL_HANDLER = CommandHandler(['r', 'jk' 'sh', 'shell', 'run'], shell)
+SHELL_HANDLER = CommandHandler(['r', 'sh', 'shell', 'run'], shell)
 dispatcher.add_handler(SHELL_HANDLER)
