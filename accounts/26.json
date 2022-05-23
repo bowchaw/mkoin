@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "natasha-malkova-350611",
+  "private_key_id": "e808a007700bc72afb316bad43d56bdedfa18892",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7ybpPXVVxoX7L\n4JaFgzPMtCThygTCDcy/t0qmsFoTK3FwUbvnhp3t1RTbo0PRUu4a5fcHxAbKHW2l\nN9nPRrSLYmaq3bKKnqflPbiPYn/rE3TURF+HJ27jI0A12vBEBc1a7tpS4VnPUc+Y\nLZFgrpxzPQoKnc94xYEAV+Swq+Rp6IK+HvUfMyCQCLCoNS7vR0LHiwtMhBbijbq/\n8fTIFfMw0et+EiA7p6d2gxKGFo0nJpYieZpuFkkUPQkzPIPwn94Taqemg55MXFaF\nPr9228TB8PmRA4l7SuArhntt8gWyF7hwikkIb50knr3whDN7I5Oi37+0ZXfzHjhE\nBLzfE4wbAgMBAAECggEAJPRo3q9uXiM60aJL3NBaBEG7NFfOIeYXUe8fGLiBsV4O\nP91FziU2tRQGu8ZgVTQtuUtiFrwj3eh2qFnaWij+5KMjsyJXvWHFhp5j0IvAwqEc\nj5048172Omq4eyCvwaMmq2tvuXmxc9QUt0zYXB9gmGj9reMqbgjn/wpM7duV4qVR\nroialn5WLSeJykpsUwyj6IfGfBeiP7c/O76bce7ZUBPN0cG7d+ZCs5z6v1+pXLbj\nDwMoAUxWBPYNrlaJbd+PZCw9iA8DH+mfQ5BJkIM8Rbc/qPxiP5SHnXoHx08kn8TA\npp8kjbGF9GEgMb4bXBT9UEqc2zaQg2Og8vvuZpRIyQKBgQDe3V2+7reY1M3MpX+/\nR2b+FsRlVvrPvlIaZmHdMQpJgovp3VkYyDeePco7KqGwdrY3tdUd3ISFHOQR7sdk\nBZ30LilvlpPemndFSdUXKnCs+V70CSNogSR35ezloWfCtAbEwf3fx81QfGX5tvqO\nccrfupfC+WLTIvodueRNQciEBwKBgQDXtUdLDKK9WuzxRgOw2izytVj/uLb8FVX8\n1EavRQ+bpgiYBFY7uOB40YK0S79StRQsDFP/B+fi8gvWaJlqEWB93A1HTQC8hTz/\nWAty4yPge8gp7iPAbfT1SHwz5OWmhR2CIoOI74bvEXuCXdEUzkRonMFI+efAyDLJ\nH9CS0UP6TQKBgQCkL/3SnlfQVmbPr9Wve9EavHcwGaZpylL+dBMBPBHSGkUtpA7x\nvP+MqwUEFeJM+QhBfsplV4Kh9qjntTxcKe82Z5PLS+ngg3f/Kee9S1z7cjRMITde\n1FWjp1ahzgl9XdfmuOxqIu7VrvAJyo5IxvipXvRThhsSZaBSqhLR//bTnQKBgQDD\nIjRqSfX2QgjSgrnYBKZgsXjfbKPsCwkMfKOs7laeQWbIzjOMN0SpRy5sF5HuKe0j\no8tgjDBTdw8KWPlfoHSfpq9Ebv5ZjFaPz4Ab4CqWaqO6erlQ3KeaNIZXE5xENWtq\nS/qdp8FzB2epmWEI50evMw8PCzOBjBmVI/i0uCY8iQKBgFTaPcQ/djjg/t9sFtsB\n8T63qwDovGLRQMR4FeTBO6RhaV6O/ZGKM7wigKaoo8eX1zv/JVsaObe7IFS2TYDQ\nPUSaDB3IHGnuThd7l0qaJ0MvDXH0qS9HfyaV5USv5EWwtsEXe4ABLvMcL/VV/PEj\nCOCvE8/cQUe1ivMSBN5H2rQW\n-----END PRIVATE KEY-----\n",
+  "client_email": "mfc-gp4ohgtpko83747rsz5tw4ejxi@natasha-malkova-350611.iam.gserviceaccount.com",
+  "client_id": "103660972962743697618",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mfc-gp4ohgtpko83747rsz5tw4ejxi%40natasha-malkova-350611.iam.gserviceaccount.com"
+}
