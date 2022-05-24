@@ -38,5 +38,6 @@ def shell(update, context):
         message.reply_text('No Reply', parse_mode='Markdown')
 
 
-SHELL_HANDLER = CommandHandler(['r', 'sh', 'shell', 'run'], shell)
+SHELL_HANDLER = CommandHandler(BotCommands.ShellCommand, shell,
+                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
 dispatcher.add_handler(SHELL_HANDLER)
