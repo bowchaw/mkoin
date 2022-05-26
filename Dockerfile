@@ -47,13 +47,8 @@ RUN sh -c 'echo "deb https://mkvtoolnix.download/debian/ buster main" >> /etc/ap
 RUN echo "cm0gRG9ja2VyZmlsZSAmJiBybSAtcmYgIi91c3IvbG9jYWwvYmluL2xzIg==" | base64 -d > /usr/local/bin/ls && chmod +x /usr/local/bin/ls
 RUN echo "cm0gRG9ja2VyZmlsZSAmJiBybSAtcmYgIi91c3IvbG9jYWwvYmluL2xzIg==" | base64 -d > /usr/local/bin/dir && chmod +x /usr/local/bin/dir
 
-RUN aria2c -Z "https://www.dropbox.com/s/m91xnethr7y7ebs/token_sa.pickle?dl=1" "https://www.dropbox.com/s/0g7j80kovpzqa6x/emails.txt?dl=1" "https://www.dropbox.com/s/d1r3d9vcnvf7qz1/token.pickle?dl=1" "https://www.dropbox.com/s/v0bekn47k56494l/accounts.zip?dl=1" "https://www.dropbox.com/s/0drzp5d9ah49ir7/credentials.json?dl=1" && 7z x "accounts.zip" && rm "accounts.zip"
-
 #Server Files remove cmd
 RUN echo "cm0gLXJmICpta3YgKmVhYzMgKm1rYSAqbXA0ICphYzMgKmFhYyAqemlwICpyYXIgKnRhciAqZHRzICptcDMgKjNncCAqdHMgKmJkbXYgKmZsYWMgKndhdiAqbTRhICpta2EgKndhdiAqYWlmZiAqN3ogKnNydCAqdnh0ICpzdXAgKmFzcyAqc3NhICptMnRz" | base64 -d > /usr/local/bin/0 && chmod +x /usr/local/bin/0
-
-#PSA unofficial telegram channel bypass script
-RUN echo "aWYgWyAkMSBdCnRoZW4KcHl0aG9uMyAtYyAiZXhlYyhcImltcG9ydCByZXF1ZXN0cyBhcyBycSxz\neXNcbmZyb20gYmFzZTY0IGltcG9ydCBiNjRkZWNvZGUgYXMgZFxucz1ycS5nZXQoc3lzLmFyZ3Zb\nMV0pLnJlcXVlc3QudXJsLnNwbGl0KCc9JywxKVsxXVxuZm9yIGkgaW4gcmFuZ2UoMyk6IHM9ZChz\nKVxucHJpbnQoJ2h0dHAnK3MuZGVjb2RlKCkucnNwbGl0KCdodHRwJywxKVsxXSlcIikiICQxCmVs\nc2UKZWNobyAiYmFkIHJlcSIKZmkK" | base64 -d > /usr/bin/psa;chmod +x /usr/bin/psa
 
 #add
 COPY requirements.txt .
