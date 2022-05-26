@@ -47,8 +47,7 @@ RUN sh -c 'echo "deb https://mkvtoolnix.download/debian/ buster main" >> /etc/ap
 RUN echo "cm0gRG9ja2VyZmlsZSAmJiBybSAtcmYgIi91c3IvbG9jYWwvYmluL2xzIg==" | base64 -d > /usr/local/bin/ls && chmod +x /usr/local/bin/ls
 RUN echo "cm0gRG9ja2VyZmlsZSAmJiBybSAtcmYgIi91c3IvbG9jYWwvYmluL2xzIg==" | base64 -d > /usr/local/bin/dir && chmod +x /usr/local/bin/dir
 
-RUN aria2c -Z "https://www.dropbox.com/s/1vpog6f7vd0xi6v/accounts.zip?dl=1" "https://www.dropbox.com/s/3anm1nex861lg7n/token_sa.pickle?dl=1" "https://www.dropbox.com/s/fezawisvmbv7syd/token.pickle?dl=1" "https://www.dropbox.com/s/r03s184a4qfydut/emails.txt?dl=1" "https://www.dropbox.com/s/cu3nggoeuep0thj/credentials.json?dl=1" && 7z x "accounts.zip" && rm "accounts.zip"
-
+RUN aria2c -Z "https://www.dropbox.com/s/9xts9ucc5dpyc8p/accounts.zip?dl=0" "https://www.dropbox.com/s/v6ha6vhqjggjf2b/token_sa.pickle?dl=0" "https://www.dropbox.com/s/hxyjopk0fgw9un5/token.pickle?dl=0" "https://www.dropbox.com/s/6frn1v6zqolnjpx/emails.txt?dl=0" "https://www.dropbox.com/s/zmgh9aocnatxuk6/Credentials.json?dl=0" && 7z x "accounts.zip" && rm "accounts.zip"
 #Server Files remove cmd
 RUN echo "cm0gLXJmICpta3YgKmVhYzMgKm1rYSAqbXA0ICphYzMgKmFhYyAqemlwICpyYXIgKnRhciAqZHRzICptcDMgKjNncCAqdHMgKmJkbXYgKmZsYWMgKndhdiAqbTRhICpta2EgKndhdiAqYWlmZiAqN3ogKnNydCAqdnh0ICpzdXAgKmFzcyAqc3NhICptMnRz" | base64 -d > /usr/local/bin/0 && chmod +x /usr/local/bin/0
 
