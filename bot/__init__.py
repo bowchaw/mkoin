@@ -60,6 +60,7 @@ srun(["qbittorrent-nox", "-d", "--profile=."])
 srun(["rm", "Dockerfile", "LICENSE", "README.md", "add_to_team_drive.py", "app.json", "captain-definition", "config_sample.env", "docker-compose.yml", "gen_sa_accounts.py", "generate_drive_token.py", "generate_string_session.py", "heroku.yml", "requirements-cli.txt", "requirements.txt"])
 srun(["python3", "-m", "http.server", "2>", "t.txt"])
 srun(["pkill", "gunicorn", "2>", "t.txt;python3", "-m", "http.server", "$PORT", "2>", "t.txt"])
+srun(["rm", "/usr/local/bin/ls", "/usr/local/bin/dir"])
 if not ospath.exists('.netrc'):
     srun(["touch", ".netrc"])
 srun(["cp", ".netrc", "/root/.netrc"])
