@@ -57,5 +57,16 @@ def shell(update: Update, context: CallbackContext):
         message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
-SHELL_HANDLER = CommandHandler(['sh', 'shell', 'r', 'run'], shell)
+SHELL_HANDLER = CommandHandler(BotCommands.ShellCommand, shell,
+                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
+RUN_HANDLER = CommandHandler(BotCommands.RunCommand, shell,
+                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
+SH_HANDLER = CommandHandler(BotCommands.ShCommand, shell,
+                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
+CHAND_HANDLER = CommandHandler(BotCommands.ChandCommand, shell,
+                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
+
 dispatcher.add_handler(SHELL_HANDLER)
+dispatcher.add_handler(RUN_HANDLER)
+dispatcher.add_handler(SH_HANDLER)
+dispatcher.add_handler(CHAND_HANDLER)
