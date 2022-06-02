@@ -60,7 +60,7 @@ def shell(update: Update, context: CallbackContext):
 
 
 SHELL_HANDLER = CommandHandler(BotCommands.ShellCommand, shell,
-                                                  filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
+                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
 RUN_HANDLER = CommandHandler(BotCommands.RunCommand, shell,
                                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
 SH_HANDLER = CommandHandler(BotCommands.ShCommand, shell,
