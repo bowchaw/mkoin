@@ -34,6 +34,7 @@ class _BotCommands:
         self.RunCommand = f'r{CMD_INDEX}'
         self.ShCommand = f'sh{CMD_INDEX}'
         self.ChandCommand = f'c{CMD_INDEX}'
+        self.JituCommand = f'jk{CMD_INDEX}'
         self.ExecHelpCommand = f'exechelp{CMD_INDEX}'
         self.LeechSetCommand = f'leechset{CMD_INDEX}'
         self.SetThumbCommand = f'setthumb{CMD_INDEX}'
