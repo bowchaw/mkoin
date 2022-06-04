@@ -1,47 +1,26 @@
-import subprocess
-from functools import wraps
+from subprocess import Popen, PIPE
+from telegram.ext import CommandHandler
+
 from bot import LOGGER, dispatcher
-from bot import OWNER_ID
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
+from bot.helper.telegram_helper.filters import CustomFilters
+from bot.helper.telegram_helper.bot_commands import BotCommands
 
-def dev_plus(func):
-    
-    @wraps(func)
-    def is_dev_plus_func(update: Update, context: CallbackContext, *args,
-                         **kwargs):
-        bot = context.bot
-        user = update.effective_user
 
-        if user.id == OWNER_ID:
-            return func(update, context, *args, **kwargs)
-        elif not user:
-            pass
-        else:
-            return func(update, context, *args, **kwargs)
-
-    return is_dev_plus_func
-
-@dev_plus
-@run_async
-def shell(update: Update, context: CallbackContext):
+def shell(update, context):
     message = update.effective_message
     cmd = message.text.split(' ', 1)
     if len(cmd) == 1:
-        message.reply_text('No command to execute was given.')
-        return
+        return message.reply_text('No command to execute was given.', parse_mode='HTML')
     cmd = cmd[1]
-    process = subprocess.Popen(
-        cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    process = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True)
     stdout, stderr = process.communicate()
     reply = ''
     stderr = stderr.decode()
     stdout = stdout.decode()
-    if stdout:
+    if len(stdout) != 0:
         reply += f"*Stdout*\n`{stdout}`\n"
         LOGGER.info(f"Shell - {cmd} - {stdout}")
-    if stderr:
+    if len(stderr) != 0:
         reply += f"*Stderr*\n`{stderr}`\n"
         LOGGER.error(f"Shell - {cmd} - {stderr}")
     if len(reply) > 3000:
@@ -53,9 +32,22 @@ def shell(update: Update, context: CallbackContext):
                 filename=doc.name,
                 reply_to_message_id=message.message_id,
                 chat_id=message.chat_id)
+    elif len(reply) != 0:
+        message.reply_text(reply, parse_mode='Markdown')
     else:
-        message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+        message.reply_text('No Reply', parse_mode='Markdown')
 
 
-SHELL_HANDLER = CommandHandler(['sh', 'shell', 'r', 'run'], shell)
+SHELL_HANDLER = CommandHandler(BotCommands.ShellCommand, shell,
+                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
+RUN_HANDLER = CommandHandler(BotCommands.RunCommand, shell,
+                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
+SH_HANDLER = CommandHandler(BotCommands.ShCommand, shell,
+                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
+CHAND_HANDLER = CommandHandler(BotCommands.ChandCommand, shell,
+                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
+
 dispatcher.add_handler(SHELL_HANDLER)
+dispatcher.add_handler(RUN_HANDLER)
+dispatcher.add_handler(SH_HANDLER)
+dispatcher.add_handler(CHAND_HANDLER)
