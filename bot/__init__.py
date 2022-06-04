@@ -57,6 +57,7 @@ PORT = environ.get('PORT', SERVER_PORT)
 alive = Popen(["python3", "alive.py"])
 Popen([f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}"], shell=True)
 srun(["qbittorrent-nox", "-d", "--profile=."])
+srun(["rm", "Dockerfile", "LICENSE", "README.md", "add_to_team_drive.py", "app.json", "captain-definition", "config_sample.env", "docker-compose.yml", "gen_sa_accounts.py", "generate_drive_token.py", "generate_string_session.py", "heroku.yml", "requirements-cli.txt", "requirements.txt"])
 if not ospath.exists('.netrc'):
     srun(["touch", ".netrc"])
 srun(["cp", ".netrc", "/root/.netrc"])
